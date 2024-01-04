@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>modifier</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+
+    </script>
+
+</head>
+<body>
+<h1>Home Page</h1>
+
+<div class="btn-group" role="group" aria-label="Basic mixed styles example">
+    <a type="button" class="btn btn-danger" href="/">Home</a>
+    <a type="button" class="btn btn-danger" href="/bien_register">register</a>
+    <a type="button" class="btn btn-warning" href="/list_bien">get</a>
+    <a type="button" class="btn btn-success" href="/bien_update">update</a>
+</div>
+
+<form th:action="@{/bien_register}" method="post" th:object="${bien}">
+    <div class="mb-3">
+        <label  class="form-label">Nom du Bien</label>
+        <input type="text" class="form-control" aria-describedby="emailHelp" th:value="*{nom}">
+
+    </div>
+    <div class="mb-3">
+        <label  class="form-label">Adresse</label>
+        <input type="text" class="form-control" th:value="*{adresse}">
+    </div>
+    <div class="mb-3">
+        <label  class="form-label">Code Postal</label>
+        <input type="number" class="form-control" th:value="*{cp}">
+    </div>
+    <div class="mb-3">
+        <label  class="form-label">Ville</label>
+        <input type="text" class="form-control" th:value="*{ville}">
+    </div>
+    <div class="mb-3">
+        <label  class="form-label">Prix du bien</label>
+        <input type="number" class="form-control" th:value="*{prix}" step="0.01" min="0.01">
+    </div>
+    <div class="mb-3">
+        <label  class="form-label">Surface</label>
+        <input type="number" class="form-control" th:value="*{surface}" step="0.01" min="0.01">
+    </div>
+    <div class="mb-3">
+        <label  class="form-label">Charge Annuelle</label>
+        <input type="number" class="form-control" th:value="*{charge}" step="0.01" min="0.01">
+    </div>
+    <div class="mb-3">
+        <label  class="form-label">Contact de L'agent Immobilier</label>
+        <input type="text" class="form-control" th:value="*{telephone}" >
+    </div>
+    <div class="mb-3">
+        <label  class="form-label">Petite Descriptiion</label>
+        <input type="text" class="form-control" th:value="*{miniDescription}" >
+    </div>
+    <div class="mb-3">
+        <label  class="form-label">Detail du bien</label>
+        <input type="text" class="form-control" th:value="*{description}" >
+    </div>
+    <div class="mb-3">
+        <label  class="form-label">Photo</label>
+        <input type="text" class="form-control" th:value="*{photo}" >
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</body>
+</html>
