@@ -1,0 +1,25 @@
+<header th:fragment="header">
+    <div class="logo">
+        <div class="imgLogo">
+            <img src="https://static.vecteezy.com/system/resources/thumbnails/012/747/648/small/ni-initial-letter-gold-calligraphic-feminine-floral-hand-drawn-heraldic-monogram-antique-vintage-style-luxury-logo-design-premium-vector.jpg" alt="">
+        </div>
+        <div class="nomLogo">Nes Immo</div>
+    </div>
+    <nav>
+
+        <div th:if="${userConnecter != null}">
+            <a href="/dashboard" th:text="${userConnecter.email}"></a>
+            <a href="/logout">Déconnexion</a>
+        </div>
+        <!-- Sinon, afficher le lien de connexion -->
+        <div th:if="${userConnecter == null}">
+            <a href="/login">Login</a>
+            <a  href="/register">Register</a>
+        </div>
+
+        <a href="/list_bien">Bien</a>
+        <a href="">Acheter</a>
+        <a href="">Vendre</a>
+        <a href="/">Acceuil</a>
+    </nav>
+</header>

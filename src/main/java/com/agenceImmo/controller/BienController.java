@@ -26,12 +26,12 @@ public class BienController {
     }
 
     /*Recuperer la page register*/
-    @GetMapping("/bien_register")
+/*    @GetMapping("/bien_register")
     public String getAddBien(ModelMap map){
         map.put("bien", new Bien());
         return "bienRegister";
     }
-    /*Enregister les biens*/
+    *//*Enregister les biens*//*
     @PostMapping("/bien_register")
     public String addBien(@ModelAttribute Bien bien, ModelMap map){
 
@@ -44,7 +44,7 @@ public class BienController {
             return "bienRegister";
         }
 
-    }
+    }*/
 
     /*Recuperer la page des bien*/
     @GetMapping("/list_bien")
@@ -84,5 +84,11 @@ public class BienController {
         Bien bien = bienService.getById(id);
         map.put("bien", bien);
         return "bienDetail";
+    }
+
+
+    @PostMapping
+    public String uploadPhoto(){
+        return null;
     }
 }

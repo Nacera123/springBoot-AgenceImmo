@@ -7,6 +7,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 @Entity
 @Table(name = "bien")
 @Getter
@@ -43,10 +45,10 @@ public class Bien {
     @Column(name = "telephone")
     private String telephone;
 
-    @Column(name = "description")
+    @Column(name = "description", columnDefinition = "TEXT")
     private String description;
 
-    @Column(name = "mini_description")
+    @Column(name = "mini_description", columnDefinition = "TEXT")
     private String miniDescription;
 
     @Column(name = "photo")
@@ -54,7 +56,6 @@ public class Bien {
 
     @Column(name = "active", columnDefinition = "boolean default 0")
     private boolean active;
-
 
 
 

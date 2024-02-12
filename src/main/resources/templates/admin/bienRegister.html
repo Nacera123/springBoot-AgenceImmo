@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="fragment/head :: head"></head>
+
+
+<body>
+
+    <header th:replace="fragment/header :: header"></header>
+
+
+    <div class="col-md-7 col-lg-8 register-bien">
+        <h1 >Enregistrez votre Bien</h1>
+
+
+        <div th:if="${error != null}" class="alert alert-danger" role="alert" th:text="${error}"></div>
+
+        <form class="needs-validation" th:action="@{/admin/register_bien}" method="post" th:object="${bien}">
+
+
+
+
+            <div class="row g-3">
+                <div class="col-md-4">
+                    <label  class="form-label">Type</label>
+                    <select class="form-select" id="state" th:field="*{nom}" >
+                        <option value="Studio" >Studio</option>
+                        <option value="Appartement">Appartement</option>
+                        <option value="Maison">Maison</option>
+                        <option value="Villa">Villa</option>
+                    </select>
+                    <!--<input type="text" class="form-control"  placeholder="Saisir l'adresse" th:field="*{nom}">-->
+
+                </div>
+
+                <div class="col-12">
+                    <label  class="form-label">Address</label>
+                    <input type="text" class="form-control"  placeholder="Saisir l'adresse" th:field="*{adresse}">
+
+                </div>
+
+                <div class="col-sm-6">
+                    <label  class="form-label">Code Postal</label>
+                    <input type="number" class="form-control" placeholder="" value="" required th:field="*{cp}">
+                </div>
+
+                <div class="col-sm-6">
+                    <label  class="form-label">Ville</label>
+                    <input type="text" class="form-control"  placeholder="" value="" required th:field="*{ville}">
+                </div>
+                <div class="col-sm-6">
+                    <label  class="form-label">Surface</label>
+                    <input type="number" class="form-control"  placeholder="m²" value="" required th:field="*{surface}" min="0.01" step="0.01">
+                </div>
+
+                <div class="col-sm-6">
+                    <label  class="form-label">Charges</label>
+                    <input type="number" class="form-control"  placeholder="euros" value="" required th:field="*{charge}" min="0.01" step="0.01">
+                </div>
+                <div class="col-sm-6">
+                    <label  class="form-label">Prix</label>
+                    <input type="number" class="form-control"  placeholder="euros" value="" required th:field="*{prix}" min="0.01" step="0.01">
+                </div>
+
+                <div class="col-sm-6">
+                    <label  class="form-label">Telephone</label>
+                    <input type="text" class="form-control"  placeholder="+33" value="" required th:field="*{telephone}">
+                </div>
+
+
+
+                <div class="col-12">
+                    <label  class="form-label">Photo </label>
+
+                    <input type="text" class="form-control"  placeholder="mettez le lien vers la photo" value="" required th:field="*{photo}">
+                </div>
+
+                <div class="col-12">
+                    <label  class="form-label">Mini Descriptif </label>
+
+                    <textarea type="text" class="form-control"  rows="2" th:field="*{miniDescription}"></textarea>
+
+                </div>
+                <div class="col-12">
+                    <label  class="form-label">Description Detaillée </label>
+
+                    <textarea type="text" class="form-control"  rows="10" th:field="*{description}"></textarea>
+
+                </div>
+
+                <div class="mb-3">
+                    <label for="formFile" class="form-label">Default file input example</label>
+                    <input class="form-control" type="file" id="formFile">
+                </div>
+
+
+
+
+
+                <div class="album py-5 bg-body-tertiary">
+                    <div class="container">
+
+                        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 g-3">
+                            <div class="col" >
+                                <div class="card shadow-sm">
+
+                                    <img src="https://prod-saint-gobain-fr.content.saint-gobain.io/sites/saint-gobain.fr/files/2022-04/maison-contemporaine-la-maison-saint-gobain01.jpg" width="100%" height="180">
+
+                                </div>
+                            </div>
+                            <div class="col" >
+                                <div class="card shadow-sm">
+
+                                    <img src="https://prod-saint-gobain-fr.content.saint-gobain.io/sites/saint-gobain.fr/files/2022-04/maison-contemporaine-la-maison-saint-gobain01.jpg" width="100%" height="180">
+
+                                </div>
+                            </div>
+                            <div class="col" >
+                                <div class="card shadow-sm">
+
+                                    <img src="https://prod-saint-gobain-fr.content.saint-gobain.io/sites/saint-gobain.fr/files/2022-04/maison-contemporaine-la-maison-saint-gobain01.jpg" width="100%" height="180">
+
+                                </div>
+                            </div>
+                            <div class="col" >
+                                <div class="card shadow-sm">
+
+                                    <img src="https://prod-saint-gobain-fr.content.saint-gobain.io/sites/saint-gobain.fr/files/2022-04/maison-contemporaine-la-maison-saint-gobain01.jpg" width="100%" height="180">
+
+                                </div>
+                            </div>
+                            <div class="col" >
+                                <div class="card shadow-sm">
+
+                                    <img src="https://prod-saint-gobain-fr.content.saint-gobain.io/sites/saint-gobain.fr/files/2022-04/maison-contemporaine-la-maison-saint-gobain01.jpg" width="100%" height="180">
+
+                                </div>
+                            </div>
+                            <div class="col" >
+                                <div class="card shadow-sm">
+
+                                    <img src="https://prod-saint-gobain-fr.content.saint-gobain.io/sites/saint-gobain.fr/files/2022-04/maison-contemporaine-la-maison-saint-gobain01.jpg" width="100%" height="180">
+
+                                </div>
+                            </div>
+                            <div class="col" >
+                                <div class="card shadow-sm">
+
+                                    <img src="https://prod-saint-gobain-fr.content.saint-gobain.io/sites/saint-gobain.fr/files/2022-04/maison-contemporaine-la-maison-saint-gobain01.jpg" width="100%" height="180">
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+                <div class="col-sm-4">
+                    <label for="firstName" class="form-label">Activer le bien</label>
+                    <input type="text" class="form-control" id="firstName" placeholder="" value="" required th:field="*{active}" disabled="true">
+                </div>
+
+            </div>
+
+
+            <hr class="my-4">
+
+            <button class="w-100 btn btn-dark btn-lg" type="submit">Enregister</button>
+        </form>
+    </div>
+
+    <footer th:replace="fragment/footer :: footer"></footer>
+</body>
+</html>

@@ -1,18 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>nos bien</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-
-    </script>
-
-</head>
+<head th:replace="fragment/head :: head"></head>
 <body>
-<h1>list des bien </h1>
+
+<header th:replace="fragment/header :: header"></header>
+<main>
+    <div class="album py-5 bg-body-tertiary">
+        <div class="container">
+
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                <div class="col" th:each="list:${bienList}" >
+                    <div class="card shadow-sm">
+
+                        <img th:src="${list.photo}" width="100%" height="225">
+                        <div class="card-body">
+                            <b class="card-text titre" th:text="${list.nom}"></b>
+                            <div class="descriptif">
+                                <p class="card-text" th:text="${list.miniDescription}"></p>
+                            </div>
+
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">Voir</button>
+
+                                </div>
+                                <small class="text-body-secondary" th:text="${list.prix} + '€'">$</small>
+                            </div>
+<!--                            <div class="d-flex justify-content-between align-items-center">-->
+<!--                                <div class="btn-group">-->
+<!--                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>-->
+<!--                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>-->
+<!--                                </div>-->
+<!--                                <small class="text-body-secondary" th:text="'prix ' + ' ' + ${list.prix}">$</small>-->
+<!--                            </div>-->
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</main>
+<footer th:replace="fragment/footer :: footer"></footer>
+<!--<h1>list des bien </h1>
 
 <div class="btn-group" role="group" aria-label="Basic mixed styles example">
     <a type="button" class="btn btn-danger" href="/">Home</a>
@@ -51,7 +81,7 @@
         <td th:text="${list.miniDescription}"></td>
         <td th:text="${list.description}"></td>
         <td ><a class="btn btn-secondary btn-sm" th:href="@{'/bien_update/' + ${list.id}}">UPDATE</a>
-        <!--<td ><a class="btn btn-secondary btn-sm" th:href="@{'/delete_bien/active/' + ${list.id}}">delete</a></td>-->
+        &lt;!&ndash;<td ><a class="btn btn-secondary btn-sm" th:href="@{'/delete_bien/active/' + ${list.id}}">delete</a></td>&ndash;&gt;
         <a class="btn btn-secondary btn-sm" th:href="@{'/bien_detail/' + ${list.id}}">detail</a>
         <a th:if="${list.active == false}" th:href="@{'/delete_bien/active/' + ${list.id}}">Activer</a>
         <a th:if="${list.active == true}" th:href="@{'/delete_bien/active/' + ${list.id}}">Supprimer</a>
@@ -59,7 +89,7 @@
 
     </tr>
     </tbody>
-</table>
+</table>-->
 
 </body>
 </html>

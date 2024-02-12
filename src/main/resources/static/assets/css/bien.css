@@ -1,0 +1,16 @@
+.register-bien{
+    margin-top: 100px;
+    padding: 0px 0px 0px 30px;
+    margin-bottom: 200px;
+}
+.needs-validation{
+    margin-top: 40px;
+}
+
+.descriptif{
+    height: 50px;
+    font-size: 14px;
+}
+.titre{
+    font-size: 20px;
+}
